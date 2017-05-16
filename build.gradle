@@ -1,13 +1,17 @@
+import com.sun.org.apache.xalan.internal.xsltc.cmdline.Compile
+
 group 'mysql'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
 
-sourceCompatibility = 1.5
+sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
+    compile 'mysql:mysql-connector-java:5.1.42'
+
 }
