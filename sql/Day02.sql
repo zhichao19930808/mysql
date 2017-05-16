@@ -2,7 +2,7 @@ SHOW DATABASES ; -- 查询现有的数据库(SHOW DATABASES;返回可用数据�
 DROP DATABASE db_1702;-- 删除名叫db_1702的库
 CREATE DATABASE db_1702;-- 建立一个名叫db_1702的库
 CREATE TABLE db_1702.t_student(-- 为db_1702库建立一个叫做t_student的表
-  number        INT(10) COMMENT '学号',-- VARCHAR(M)定义的列的长度为可变长字符串
+  id            INT AUTO_INCREMENT PRIMARY KEY COMMENT '学号',-- VARCHAR(M)定义的列的长度为可变长字符串
   name          VARCHAR(4) COMMENT '姓名',
   gender        CHAR(1)COMMENT '性别',-- CHAR(M)定义的列的长度为固定的
   age           INT UNSIGNED COMMENT '年龄',
@@ -12,11 +12,15 @@ CREATE TABLE db_1702.t_student(-- 为db_1702库建立一个叫做t_student的表
   price         DECIMAL(6,2) COMMENT '学费',
   intro         TEXT COMMENT '简介'
 );
-INSERT INTO db_1702.t_student VALUES (11150123,'郅超','男',25,1.71,65.2,'2017-2-1',1998.99,'这个人是个大帅哥');
+#为t_student 表添加一条内容
+INSERT INTO db_1702.t_student VALUES (NULL ,'郅超','男',25,1.71,65.2,'2017-2-1',1998.99,'这个人是个大帅哥');
+#查看t_student表
 SELECT *
 FROM db_1702.t_student;
-
+#查看t_student表的详细信息
 SHOW FULL COLUMNS FROM db_1702.t_student;
 
 TRUNCATE TABLE db_1702.t_student;-- 切去db_1702的t_student表中的内容（不走“回收站”）
 DELETE FROM db_1702.t_student;-- 切去db_1702的t_student表中的内容（走“回收站”）
+#删除id=1或 id=3的两条内容
+DELETE FROM db_1702.t_student WHERE id = 1 or id = 3;
