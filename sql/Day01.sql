@@ -4,10 +4,10 @@ SHOW DATABASES ;
 CREATE DATABASE db_1702;
 #删除一个库
 DROP DATABASE db_1702;
-#查看当前库的表
-SHOW TABLES ;
 #使用某个数据库
 USE db_1702;
+#查看当前库的表
+SHOW TABLES ;
 #建立一个表
 CREATE TABLE t_student (
   sno    VARCHAR(10),
