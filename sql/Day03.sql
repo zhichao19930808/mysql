@@ -32,7 +32,12 @@ ALTER TABLE db_1702.student_course-- 改变student_course表
   ADD CONSTRAINT -- 增加约束
   fk_student_course_studentId -- 起个别名
 FOREIGN KEY (studentid)-- 约束的列是 studentid
-REFERENCES db_1702.t_student (id);-- 参考 t_student的主键（id）
+REFERENCES db_1702.t_student (id)-- 参考 t_student的主键（id）
+ ON DELETE CASCADE ;-- 当主标的内容被删除时，子表中的内容也同时被删除
+#  ON DELETE SET NULL;-- 当主表的内容被删除时，子表参考主表的值变为null
+
+DELETE FROM db_1702.t_student;
+
 
 ALTER TABLE db_1702.student_course
   ADD CONSTRAINT
@@ -43,15 +48,17 @@ REFERENCES db_1702.course (id);
 SHOW FULL COLUMNS FROM db_1702.student_course;
 
 SELECT *
-FROM student_course;
+FROM db_1702.student_course;
 
 SELECT *
 FROM db_1702.t_student;
 
 SELECT *
 FROM db_1702.course;
+
+
 INSERT INTO db_1702.student_course
-VALUES (NULL, 4, 1, NULL);
+VALUES (NULL, 2, 1, NULL);
 
 INSERT INTO db_1702.student_course
 VALUES (NULL, 4, 2, NULL);
