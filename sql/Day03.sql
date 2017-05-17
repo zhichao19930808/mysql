@@ -31,8 +31,8 @@ CREATE TABLE db_1702.student_course (
 ALTER TABLE db_1702.student_course-- 改变student_course表
   ADD CONSTRAINT -- 增加约束
   fk_student_course_studentId -- 起个别名
-FOREIGN KEY (studentid)-- 约束
-REFERENCES db_1702.t_student (id);-- 参考
+FOREIGN KEY (studentid)-- 约束的列是 studentid
+REFERENCES db_1702.t_student (id);-- 参考 t_student的主键（id）
 
 ALTER TABLE db_1702.student_course
   ADD CONSTRAINT
