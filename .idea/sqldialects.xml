@@ -5,6 +5,9 @@
     <file url="file://$PROJECT_DIR$/sql/Day02.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/sql/Day03.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/sql/Day0302.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/sql/Day04.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/sql/ip.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/DumpIpData.java" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/JDBC.java" dialect="MySQL" />
   </component>
 </project>
