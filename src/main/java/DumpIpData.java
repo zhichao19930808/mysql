@@ -10,6 +10,7 @@ import java.sql.SQLException;
 
 /**
  * Created by Administrator on 2017/5/18.
+ *
  */
 public class DumpIpData {
     private static final String URL = "jdbc:mysql://127.0.0.1:3306/";
@@ -17,13 +18,11 @@ public class DumpIpData {
     private static final String PASSWORD = "glory.0808";
     private static final String SQL = "INSERT INTO db_1702.ip VALUES (NULL, ?, ?, ?)";
     private static int counter = 0;
-    private static Connection connection;
     private static PreparedStatement preparedStatement;
 
      private static void Jdbc(String min, String max, String geo) throws SQLException {
 
 //        3,编译语句
-         preparedStatement = connection.prepareStatement(SQL);
          preparedStatement.setString(1,min);
          preparedStatement.setString(2,max);
          preparedStatement.setString(3,geo);
@@ -38,8 +37,11 @@ public class DumpIpData {
         //        1,准备数据库驱动
         new Driver();
 //        2,获得一次数据库连接
-        connection = DriverManager.getConnection(URL,USER,PASSWORD);
+
+        Connection connection = DriverManager.getConnection(URL,USER,PASSWORD);
         connection.setAutoCommit(false);
+        preparedStatement = connection.prepareStatement(SQL);
+
         try (
                 BufferedReader reader = new BufferedReader(new FileReader("file/ip.txt"))
         ) {
@@ -49,8 +51,10 @@ public class DumpIpData {
                 String max =line.split("\\s+")[1];
                 String geo =line.replace(min,"").replace(max,"").trim();
                 Jdbc(min,max,geo);
-                counter++;
-//                System.out.println(counter);
+                if ( ++counter%1000 == 0) {
+                    System.out.println(counter);
+                    preparedStatement.executeLargeBatch();
+                }
             }
         } catch (IOException | SQLException e) {
             e.printStackTrace();
