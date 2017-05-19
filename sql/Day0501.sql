@@ -8,12 +8,10 @@ SELECT *
 FROM scott.emp
 LIMIT 3;-- limit 限制\ ['lɪmɪt]
 
-
 # 从第3行开始显示之后的4行信息
 SELECT *
 FROM scott.emp
 LIMIT 3,4;
-
 
 # 从第3行开始 显示之后的4行内容
 SELECT *
