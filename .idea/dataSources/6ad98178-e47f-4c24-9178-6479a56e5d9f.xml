@@ -15,28 +15,47 @@
     <schema id="7" parent="1" name="scott">
       <Visible>1</Visible>
     </schema>
-    <schema id="8" parent="1" name="db_exam">
-      <Visible>1</Visible>
-    </schema>
-    <table id="9" parent="6" name="alter_study"/>
-    <table id="10" parent="6" name="ip"/>
-    <table id="11" parent="6" name="t_student"/>
-    <table id="12" parent="7" name="dept"/>
-    <table id="13" parent="7" name="emp"/>
-    <table id="14" parent="7" name="salgrade"/>
-    <table id="15" parent="8" name="course"/>
-    <table id="16" parent="8" name="department"/>
-    <table id="17" parent="8" name="student"/>
-    <table id="18" parent="8" name="student_course"/>
-    <column id="19" parent="9" name="id">
+    <table id="8" parent="6" name="alter_study"/>
+    <table id="9" parent="6" name="ip"/>
+    <table id="10" parent="6" name="t_student"/>
+    <table id="11" parent="7" name="dept"/>
+    <table id="12" parent="7" name="emp"/>
+    <table id="13" parent="7" name="salgrade"/>
+    <column id="14" parent="8" name="id">
       <Position>1</Position>
       <Comment>id pk</Comment>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="20" parent="9" name="name">
+    <column id="15" parent="8" name="name">
       <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <key id="16" parent="8" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="17" parent="9" name="id">
+      <Position>1</Position>
+      <Comment>ID pk</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="18" parent="9" name="min">
+      <Position>2</Position>
+      <Comment>起始IP地址</Comment>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="19" parent="9" name="max">
+      <Position>3</Position>
+      <Comment>终止IP地址</Comment>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="20" parent="9" name="geo">
+      <Position>4</Position>
+      <Comment>地理位置</Comment>
       <DataType>varchar(255)|0</DataType>
     </column>
     <key id="21" parent="9" name="PRIMARY">
@@ -45,286 +64,130 @@
     </key>
     <column id="22" parent="10" name="id">
       <Position>1</Position>
-      <Comment>ID pk</Comment>
-      <DataType>int(11)|0</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
-    </column>
-    <column id="23" parent="10" name="min">
-      <Position>2</Position>
-      <Comment>起始IP地址</Comment>
-      <DataType>varchar(255)|0</DataType>
-    </column>
-    <column id="24" parent="10" name="max">
-      <Position>3</Position>
-      <Comment>终止IP地址</Comment>
-      <DataType>varchar(255)|0</DataType>
-    </column>
-    <column id="25" parent="10" name="geo">
-      <Position>4</Position>
-      <Comment>地理位置</Comment>
-      <DataType>varchar(255)|0</DataType>
-    </column>
-    <key id="26" parent="10" name="PRIMARY">
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="27" parent="11" name="id">
-      <Position>1</Position>
       <Comment>学号</Comment>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="28" parent="11" name="name">
+    <column id="23" parent="10" name="name">
       <Position>2</Position>
       <Comment>姓名</Comment>
       <DataType>varchar(4)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="29" parent="11" name="gender">
+    <column id="24" parent="10" name="gender">
       <Position>3</Position>
       <Comment>性别</Comment>
       <DataType>char(1)|0</DataType>
     </column>
-    <column id="30" parent="11" name="age">
+    <column id="25" parent="10" name="age">
       <Position>4</Position>
       <Comment>年龄</Comment>
       <DataType>int(10) unsigned|0</DataType>
     </column>
-    <column id="31" parent="11" name="height">
+    <column id="26" parent="10" name="height">
       <Position>5</Position>
       <Comment>身高</Comment>
       <DataType>double(3,2)|0</DataType>
     </column>
-    <column id="32" parent="11" name="weight">
+    <column id="27" parent="10" name="weight">
       <Position>6</Position>
       <Comment>体重</Comment>
       <DataType>double(3,1)|0</DataType>
     </column>
-    <column id="33" parent="11" name="time">
+    <column id="28" parent="10" name="time">
       <Position>7</Position>
       <Comment>入学时间</Comment>
       <DataType>date|0</DataType>
     </column>
-    <column id="34" parent="11" name="price">
+    <column id="29" parent="10" name="price">
       <Position>8</Position>
       <Comment>学费</Comment>
       <DataType>decimal(6,2)|0</DataType>
     </column>
-    <column id="35" parent="11" name="intro">
+    <column id="30" parent="10" name="intro">
       <Position>9</Position>
       <Comment>简介</Comment>
       <DataType>text|0</DataType>
     </column>
-    <key id="36" parent="11" name="PRIMARY">
+    <key id="31" parent="10" name="PRIMARY">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="37" parent="12" name="DEPTNO">
+    <column id="32" parent="11" name="DEPTNO">
       <Position>1</Position>
       <DataType>int(2)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="38" parent="12" name="DNAME">
+    <column id="33" parent="11" name="DNAME">
       <Position>2</Position>
       <DataType>varchar(14)|0</DataType>
     </column>
-    <column id="39" parent="12" name="LOC">
+    <column id="34" parent="11" name="LOC">
       <Position>3</Position>
       <DataType>varchar(13)|0</DataType>
     </column>
-    <key id="40" parent="12" name="PRIMARY">
+    <key id="35" parent="11" name="PRIMARY">
       <ColNames>DEPTNO</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="41" parent="13" name="EMPNO">
+    <column id="36" parent="12" name="EMPNO">
       <Position>1</Position>
       <DataType>int(4)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="42" parent="13" name="ENAME">
+    <column id="37" parent="12" name="ENAME">
       <Position>2</Position>
       <DataType>varchar(10)|0</DataType>
     </column>
-    <column id="43" parent="13" name="JOB">
+    <column id="38" parent="12" name="JOB">
       <Position>3</Position>
       <DataType>varchar(9)|0</DataType>
     </column>
-    <column id="44" parent="13" name="MGR">
+    <column id="39" parent="12" name="MGR">
       <Position>4</Position>
       <DataType>int(4)|0</DataType>
     </column>
-    <column id="45" parent="13" name="HIREDATE">
+    <column id="40" parent="12" name="HIREDATE">
       <Position>5</Position>
       <DataType>date|0</DataType>
     </column>
-    <column id="46" parent="13" name="SAL">
+    <column id="41" parent="12" name="SAL">
       <Position>6</Position>
       <DataType>double(7,2)|0</DataType>
     </column>
-    <column id="47" parent="13" name="COMM">
+    <column id="42" parent="12" name="COMM">
       <Position>7</Position>
       <DataType>double(7,2)|0</DataType>
     </column>
-    <column id="48" parent="13" name="DEPTNO">
+    <column id="43" parent="12" name="DEPTNO">
       <Position>8</Position>
       <DataType>int(2)|0</DataType>
     </column>
-    <index id="49" parent="13" name="FK_emp_deptno">
+    <index id="44" parent="12" name="FK_emp_deptno">
       <ColNames>DEPTNO</ColNames>
     </index>
-    <key id="50" parent="13" name="PRIMARY">
+    <key id="45" parent="12" name="PRIMARY">
       <ColNames>EMPNO</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="51" parent="13" name="FK_emp_deptno">
+    <foreign-key id="46" parent="12" name="FK_emp_deptno">
       <ColNames>DEPTNO</ColNames>
       <RefSchemaName>scott</RefSchemaName>
       <RefTableName>dept</RefTableName>
       <RefColNames>DEPTNO</RefColNames>
     </foreign-key>
-    <column id="52" parent="14" name="GRADE">
+    <column id="47" parent="13" name="GRADE">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="53" parent="14" name="LOSAL">
+    <column id="48" parent="13" name="LOSAL">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="54" parent="14" name="HISAL">
+    <column id="49" parent="13" name="HISAL">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="55" parent="15" name="id">
-      <Position>1</Position>
-      <Comment>id pk</Comment>
-      <DataType>int(11)|0</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
-    </column>
-    <column id="56" parent="15" name="title">
-      <Position>2</Position>
-      <Comment>课程表名称</Comment>
-      <DataType>varchar(255)|0</DataType>
-    </column>
-    <column id="57" parent="15" name="credit">
-      <Position>3</Position>
-      <Comment>学分</Comment>
-      <DataType>int(11)|0</DataType>
-    </column>
-    <key id="58" parent="15" name="PRIMARY">
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="59" parent="16" name="id">
-      <Position>1</Position>
-      <Comment>id pk</Comment>
-      <DataType>int(11)|0</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
-    </column>
-    <column id="60" parent="16" name="title">
-      <Position>2</Position>
-      <Comment>系名称</Comment>
-      <DataType>varchar(255)|0</DataType>
-    </column>
-    <column id="61" parent="16" name="tel">
-      <Position>3</Position>
-      <Comment>电话</Comment>
-      <DataType>int(11)|0</DataType>
-    </column>
-    <key id="62" parent="16" name="PRIMARY">
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="63" parent="17" name="id">
-      <Position>1</Position>
-      <Comment>ID PK</Comment>
-      <DataType>int(11)|0</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
-    </column>
-    <column id="64" parent="17" name="name">
-      <Position>2</Position>
-      <Comment>姓名</Comment>
-      <DataType>varchar(255)|0</DataType>
-    </column>
-    <column id="65" parent="17" name="age">
-      <Position>3</Position>
-      <Comment>年龄</Comment>
-      <DataType>int(11)|0</DataType>
-    </column>
-    <column id="66" parent="17" name="gender">
-      <Position>4</Position>
-      <Comment>性别</Comment>
-      <DataType>char(1)|0</DataType>
-    </column>
-    <column id="67" parent="17" name="dob">
-      <Position>5</Position>
-      <Comment>出生日期</Comment>
-      <DataType>date|0</DataType>
-    </column>
-    <column id="68" parent="17" name="departmentID">
-      <Position>6</Position>
-      <Comment>部门编号</Comment>
-      <DataType>int(11)|0</DataType>
-    </column>
-    <index id="69" parent="17" name="fk_student_course_departmentID">
-      <ColNames>departmentID</ColNames>
-    </index>
-    <key id="70" parent="17" name="PRIMARY">
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <foreign-key id="71" parent="17" name="fk_student_course_departmentID">
-      <ColNames>departmentID</ColNames>
-      <RefSchemaName>db_exam</RefSchemaName>
-      <RefTableName>department</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <column id="72" parent="18" name="id">
-      <Position>1</Position>
-      <Comment>id pk</Comment>
-      <DataType>int(11)|0</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
-    </column>
-    <column id="73" parent="18" name="studentId">
-      <Position>2</Position>
-      <Comment>学生id</Comment>
-      <DataType>int(11)|0</DataType>
-    </column>
-    <column id="74" parent="18" name="courseId">
-      <Position>3</Position>
-      <Comment>系别id</Comment>
-      <DataType>int(11)|0</DataType>
-    </column>
-    <column id="75" parent="18" name="score">
-      <Position>4</Position>
-      <DataType>int(11)|0</DataType>
-    </column>
-    <index id="76" parent="18" name="fk_student_course_studentId">
-      <ColNames>studentId</ColNames>
-    </index>
-    <index id="77" parent="18" name="fk_student_course_courseId">
-      <ColNames>courseId</ColNames>
-    </index>
-    <key id="78" parent="18" name="PRIMARY">
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <foreign-key id="79" parent="18" name="fk_student_course_studentId">
-      <ColNames>studentId</ColNames>
-      <RefSchemaName>db_exam</RefSchemaName>
-      <RefTableName>student</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <foreign-key id="80" parent="18" name="fk_student_course_courseId">
-      <ColNames>courseId</ColNames>
-      <RefSchemaName>db_exam</RefSchemaName>
-      <RefTableName>course</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
   </database-model>
 </dataSource>

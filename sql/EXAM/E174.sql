@@ -159,7 +159,19 @@ FROM db_exam.student_course;
 SELECT name
 FROM db_exam.student
 WHERE name LIKE '王%';
+# 7,删除各表，删除数据库（10分）
+-- 删除各表
+USE db_exam;
+DROP TABLE db_exam.student_course;
+DROP TABLE db_exam.course;
+DROP TABLE db_exam.student;
+DROP TABLE db_exam.department;
+SHOW TABLES ;
+DROP DATABASE db_exam;
 
+/*
+完事 收功
+ */
 
 
 
