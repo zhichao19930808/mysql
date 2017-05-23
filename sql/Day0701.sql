@@ -1,0 +1,21 @@
+show DATABASES ;
+USE scott;
+SHOW TABLES ;
+
+SELECT *
+FROM emp;
+
+CREATE VIEW scott.v_emp
+  AS
+  SELECT *
+  FROM scott.emp
+WHERE DEPTNO=20;
+DROP VIEW IF EXISTS v_emp;
+
+SELECT *
+FROM v_emp
+WHERE MGR=7566;
+
+UPDATE v_emp
+SET SAL=3500
+WHERE EMPNO = 7788;
