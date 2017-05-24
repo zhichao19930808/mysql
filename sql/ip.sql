@@ -9,3 +9,8 @@ CREATE TABLE db_1702.ip(
   FROM db_1702.ip;
 
 TRUNCATE TABLE db_1702.ip;
+
+
+SELECT count(*)
+FROM db_1702.ip
+WHERE geo REGEXP '拉萨市';
