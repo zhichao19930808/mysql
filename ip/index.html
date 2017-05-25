@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Map</title>
+    <script src="echarts.min.js"></script>
+    <script src="china.js"></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div id="box">
+
+</div>
+
+<script>
+    var chart = echarts.init(document.getElementById('box'));
+
+var myData = [
+    {name: '海门', value: [121.15, 31.89, 90]},
+    {name: '鄂尔多斯', value: [109.781327, 39.608266, 120]},
+    {name: '招远', value: [120.38, 37.35, 142]},
+    {name: '舟山', value: [122.207216, 29.985295, 123]}
+];
+var option ={
+        geo:{
+            map:'china',
+
+            itemStyle: {					// 定义样式
+                normal: {					// 普通状态下的样式
+                    areaColor: '#323c48',
+                    borderColor: '#808000'
+                },
+                emphasis: {					// 高亮状态下的样式
+                    areaColor: '#696969'
+                }
+            }
+        },
+        backgroundColor: '#F5DEB3' ,		// 图表背景色
+        series: [
+            {
+                name: '销量', // series名称
+                type: 'scatter', // series图表类型
+                coordinateSystem: 'geo' ,// series坐标系类型
+
+                data: myData // series数据内容
+            }
+        ],
+    visualMap: {
+        type: 'continuous', // 连续型
+        min: 0,       		// 值域最小值，必须参数
+        max: 200,			// 值域最大值，必须参数
+        calculable: true,	// 是否启用值域漫游
+        inRange: {
+            color: ['#9ACD32','#FF4500','#8B0000']
+            // 指定数值从低到高时的颜色变化
+        },
+        textStyle: {
+            color: '#fff'	// 值域控件的文本颜色
+        }
+    }
+    };
+chart.setOption(option);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+#box {
+    height: 650px;
+    margin: auto;
+    background: orangered;
+}
