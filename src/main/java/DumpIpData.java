@@ -37,7 +37,7 @@ public class DumpIpData {
         //        1,准备数据库驱动
         new Driver();
 //        2,获得一次数据库连接
-
+        System.out.println();
         Connection connection = DriverManager.getConnection(URL,USER,PASSWORD);
         connection.setAutoCommit(false);
         preparedStatement = connection.prepareStatement(SQL);
