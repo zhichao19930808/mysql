@@ -36,12 +36,14 @@ public class UI {
         String password = scanner.nextLine();
         if (name.trim().length() == 0 && password.length() == 0) {
             message("账号或密码不规范。");
-        } else {
-            int i = DbHlper.add(new Account(name, password));
+        } else{
+            int i = DbHlper.add(name, password);
             if (i > 0) {
                 message("注册成功。");
+            } else if (i == 0) {
+                message("注册失败:该账号已存在");
             } else {
-                message("注册失败。");
+                message("注册失败：未知原因");
             }
         }
     }
@@ -52,8 +54,7 @@ public class UI {
         String name = scanner.nextLine();
         message("输入密码:");
         String pwd = scanner.nextLine();
-        String sql = "select * from db_test.user where userName='" + name + "' and userPSD='" + pwd + "'";
-        ResultSet resultSet = DbHlper.getByName(sql);
+        ResultSet resultSet = DbHlper.getByName(name,pwd);
         if (resultSet != null) {
             try {
                 if (resultSet.next()) {
